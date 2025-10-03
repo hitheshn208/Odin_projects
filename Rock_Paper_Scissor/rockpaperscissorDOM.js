@@ -35,6 +35,31 @@ instruction.textContent = `Round ${counter} : Make your Choice`;
 
 let n =1000;
 
+//Pre loading the images
+
+  // List all your game images
+  const imagesToPreload = [
+    'computerpaper.png',
+    'computerrock.png',
+    'computerscissor.png',
+    'paperhuman.png',
+    'rockhuman.png',
+    'scissorshuman.png',
+    'vs1.png'
+  ];
+
+  const preloadedImages = [];
+
+  window.addEventListener('load', () => {
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      preloadedImages.push(img);
+    });
+    console.log('All game images preloaded!');
+  });
+
+
 
 
 choice.addEventListener("click", (e)=>{
