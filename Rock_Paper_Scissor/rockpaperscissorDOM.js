@@ -37,7 +37,7 @@ let n =1000;
 
 //Pre loading the images
 
-  // List all your game images
+
   const imagesToPreload = [
     'computerpaper.png',
     'computerrock.png',
@@ -200,7 +200,7 @@ choice.addEventListener("click", (e)=>{
             choice.style.pointerEvents = "auto";
             choice.style.opacity = "1";
             
-            },1500);
+            },2000);
 
             return;
         }
@@ -265,7 +265,7 @@ function computerScoreUpdation()
         setTimeout(()=>{
         computerCardImage.classList.add("winninganimation");
         computerscorecard.innerHTML = computerscore;
-        instruction.textContent = `Computer Won Round ${counter} !!`;
+        instruction.textContent = `Computer Won Round ${counter-1} !!`;
         },1000);
 }
 
@@ -278,7 +278,7 @@ function humanScoreUpdation()
         setTimeout(()=>{
         humanCardImage.classList.add("winninganimation");
         humanscorecard.innerHTML = humanscore;
-        instruction.textContent = `You Won Round ${counter} !!`;
+        instruction.textContent = `You Won Round ${counter-1} !!`;
         },1000);
         
         
