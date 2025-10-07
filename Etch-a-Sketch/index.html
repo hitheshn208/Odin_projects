@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Etch-a-Sketch</h1>
+  <p><i>( Press and drag through the cells )</i></p>
+    <div class="inputting">
+    <div>
+      <input type="number" id="input-change-grid-size" placeholder="Change grid Size (16 - 100)">
+      <button id="change-grid-size">Change</button>
+    </div>
+    <div>
+      <label for="selected-color">Select Specific color</label>
+      <input type="color" id="selected-color" min="16" max="100">
+    </div>
+  </div>
+
+  <div class="container"></div>
+  
+<div class="btn-div">
+  <button id="reset">Reset</button>
+  <button id="random-color">Random Colors</button>
+</div>
+
+
+  
+</body>
+</html>
