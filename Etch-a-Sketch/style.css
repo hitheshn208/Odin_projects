@@ -27,8 +27,7 @@ p{
   height:525px;
   display:flex;
   flex-direction: column;
-   border-top: solid 0.5px black;
-  border-left: solid 0.5px black;
+  border: 2px solid black;
 }
 
 .row-class
@@ -42,9 +41,6 @@ p{
 {
   width:100%;
   height: 100%;
-  box-sizing: border-box;
-  border-right: solid 0.5px black; 
-  border-bottom: solid 0.5px black;  
 }
 
 .btn-div
