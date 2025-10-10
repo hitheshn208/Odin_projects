@@ -106,6 +106,10 @@ function mainControl(e)
                             return;
                             
         case "AC"       : display.textContent = "";
+                            op1= NaN;
+                            op2 = NaN;
+                            operator_used = "";
+                            toPerform = "";
                             return;
     }
 
