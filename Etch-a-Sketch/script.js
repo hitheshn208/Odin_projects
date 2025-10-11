@@ -15,15 +15,16 @@ body.addEventListener("mouseup", ()=>{
 });
 
 let colorType = 0;
-
 let isMouseDown = false;
 
 container.addEventListener("mouseover", (e)=>{
     if(e.target !== container)
 	{
 		if(isMouseDown)
-        e.target.style.backgroundColor = selectBackgroundType(colorType);
-    }
+		{
+			e.target.style.backgroundColor = selectBackgroundType(colorType);
+		}
+	}	
 });
 
 container.addEventListener("mousedown", (e)=>{
@@ -81,6 +82,9 @@ changeGridBtn.addEventListener("click", ()=>{
 	gridSize.value = "";
 });
 
+
+/*------------------------Creating divs----------------------*/
+
 function createDiv(n)
 {
 	container.innerHTML = "";
@@ -96,7 +100,6 @@ function createDiv(n)
             newCell.classList.add("cell-class");
             newRow.appendChild(newCell);
         }
-
         container.appendChild(newRow);
     }
 }
