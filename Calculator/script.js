@@ -1,7 +1,4 @@
 const display = document.querySelector('.display');
-
-const button = document.querySelectorAll('.button');
-
 const keypad = document.querySelector('.keypad');
 
 const addbtn = document.getElementById('+');
@@ -10,16 +7,14 @@ const dividebtn = document.getElementById('/');
 const multiplybtn = document.getElementById('*');
 
 
-
-let operator_used = "";
-let op1, op2;
-let toPerform = "";
-let isCalculated = false;
+let ops;
+let expression = null;
+let isOperatorUsed = false, isInvalid = false;
+display.textContent = null;
 
 /*--------------------------------------------------------------------------------------Keyboard-------------------------------------------------------------------------------*/
 
-document.addEventListener("keydown", (e)=>
-{
+document.addEventListener("keydown", (e)=>{
     console.log(e.key);
     mainControl(e.key);
 });
@@ -29,157 +24,226 @@ document.addEventListener("keydown", (e)=>
 keypad.addEventListener('click', (e)=>{
     console.log(e.target.id);
     mainControl(e.target.id);
-})
-
+    e.target.blur(); // Remove focus from the clicked button
+});
 
 /*---------------------------------------------------------------------------- Functions -----------------------------------------------------------------------------------*/
 
 function mainControl(e)
 {
-    if(isCalculated)
+    if(isInvalid)
     {
-        isCalculated = false;
+        isInvalid = false;
         display.textContent = "";
-    }
-
-    switch (operator_used) {                                                    //Checks if the operator was used and clears the input field for 2nd operand
-
-        case "+":
-            op1 = parseInt(display.textContent);
-            display.textContent = "";
-            addbtn.style.opacity = 1;
-            operator_used = "";
-            break;
-
-        case "-":
-            op1 = parseInt(display.textContent);
-            display.textContent = "";
-            subtractbtn.style.opacity = 1;
-            operator_used = "";
-            break;
-
-        case "*":
-            op1 = parseInt(display.textContent);
-            display.textContent = "";
-            multiplybtn.style.opacity = 1;
-            operator_used = "";
-            break;
-
-        case "/":
-            op1 = parseInt(display.textContent);
-            display.textContent = "";
-            dividebtn.style.opacity = 1;
-            operator_used = "";
-            break;
     }
 
     switch(e) {
 
         case "+"    :   console.log("Add");
-                        addbtn.style.opacity = 0.5;
-                        operator_used = "+";
-                        toPerform = "addition";
+
+                        if(isOperatorUsed)
+                        {
+                            isOperatorUsed = false;
+                            evaluation();
+
+                            if(isInvalid)
+                                return;
+                        }
+
+                        display.textContent += "+";
+                        isOperatorUsed = true;
                         break;
 
         case "-"    :   console.log("Subtract");
-                        subtractbtn.style.opacity = 0.5;
-                        operator_used = "-";
-                        toPerform = "subtraction";
+
+                        if(isOperatorUsed)
+                        {
+                            isOperatorUsed = false;
+                            evaluation();
+
+                            if(isInvalid)
+                                return;
+                        }
+
+                        display.textContent += "-";
+                        isOperatorUsed = true;
                         break;
 
         case "*"    :   console.log("Multiply");
-                        multiplybtn.style.opacity = 0.5;
-                        operator_used = "*";
-                        toPerform = "multiplication";
+
+                        if(isOperatorUsed)
+                        {
+                            isOperatorUsed = false;
+                            evaluation();
+
+                            if(isInvalid)
+                                return;
+                        }
+
+                        display.textContent += "*";
+                        isOperatorUsed = true;
                         break;
 
         case "/"    :   console.log("Divide");
-                        dividebtn.style.opacity = 0.5;
-                        operator_used = "/";
-                        toPerform = "division";
+
+                        if(isOperatorUsed)
+                        {
+                            isOperatorUsed = false;
+                            evaluation();
+
+                            if(isInvalid)
+                                return;
+                        }
+                        display.textContent += "/";
+                        isOperatorUsed = true;
                         break;
 
-        case "Enter":   performCalculation(toPerform);
+        case "."    : display.textContent += "."
                         break;
 
         case "Backspace" :  display.textContent = display.textContent.slice(0,-1);
                             return;
                             
         case "AC"       : display.textContent = "";
-                            op1= NaN;
-                            op2 = NaN;
-                            operator_used = "";
-                            toPerform = "";
+                            isOperatorUsed = false;
                             return;
+
+        case "Enter" : evaluation();
+                        break;
     }
 
-    if(isNaN(parseInt(e))) //Does not populate the display if the entered key is not a number (NaN)
+    if(isNaN(parseFloat(e))) //Does not print on the display if the entered key is not a number (NaN)
     {
+        console.log("not a number");
         return;
     }
 
-    display.textContent += parseInt(e); //Populate the input field
+    display.textContent += parseFloat(e); //Prints in the input field
 
 }
 
-function performCalculation(toPerform)
+/*---------------------------------------------------------------------Calculation Functions---------------------------------------------------*/
+
+function Addition(a,b)                          //Addition Function
 {
-    switch(toPerform)
-        {
-            case "addition":
-                op2= parseInt(display.textContent);
-                display.textContent = Addition(op1,op2);
-                toPerform = "";
-                break;
-            
-            case "subtraction" :
-                op2= parseInt(display.textContent);
-                display.textContent =Subtraction(op1,op2);
-                toPerform = "";
-                break;
-
-            case "multiplication" :
-                op2= parseInt(display.textContent);
-                display.textContent = Multiplication(op1,op2);
-                toPerform = "";
-                break;
-
-            case "division" :
-                op2= parseInt(display.textContent);
-                display.textContent = Division(op1,op2);
-                toPerform = "";
-                break;
-
-            default :   console.log("Entered default case of switch in performCalculation");
-                        return;
-        }
-}
-
-function Addition(a,b)
-{
-    isCalculated = true;
+    if(isInt(a) && isInt(b))
+        return (a+b).toFixed(0);                //if both are integer removes truncating zeros after decimal
+    
     return a+b;
 }
 
-function Subtraction(a,b)
+function Subtraction(a,b)                       //Subtraction Function
 {
-    isCalculated = true;
-    return a-b;
+    if(isInt(a) && isInt(b))
+        return (a-b).toFixed(0);                //if both are integer removes truncating zeros after decimal  
+    else
+        return a-b;
 }
 
-function Multiplication(a,b)
+function Multiplication(a,b)                   //Multiplication Function
 {
-    isCalculated = true;
+    if(isInt(a) && isInt(b))
+        return (a*b).toFixed(0);                //if both are integer removes truncating zeros after decimal
     return a*b;
 }
 
-function Division(a,b)
+function Division(a,b)                         //Division Function
 {
-    isCalculated = true;
     if( b === 0 )
     {
-        return "Error!!!";
+        isInvalid = true;
+        return "Cannot Divide by zero";
     }
+    else{
+
+        if(isInt((a/b).toFixed(3)))
+            return (a/b).toFixed(0);
+        else
+            return (a/b).toFixed(3);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+function isInt(x)
+{
+    if(x%1 === 0)                          //Checks if the operand has decimal part
+        return true;
     else
-        return (a/b).toFixed(3);
+        return false;
+}
+
+function expressionValidator(ops)
+{
+    if(isNaN(ops[0] + ops[1]) || ops[0] === "" || ops[1] === "")   //Checks for invalid expressions like continuous 2 operators and decimals
+    {
+        if(ops[0]%1 !== 0 && ops[1]%1 !== 0 )   //isNaN returns true if both Operands have decimal part so second validation
+            return true;
+        else
+            return false;
+    }
+    else 
+        return true;
+}
+
+
+function evaluation()
+{
+
+ expression = display.textContent;
+
+        if(expression.includes("+"))
+        {
+            ops = expression.split("+");
+
+            if(expressionValidator(ops))
+                display.textContent = Addition (parseFloat(ops[0]),parseFloat(ops[1]));
+            else{
+                display.textContent = "Invalid Expression";
+                isInvalid = true;
+                return;
+            }
+            ops = [];
+        }
+
+        else if( expression.includes("-"))
+        {
+            ops = expression.split("-");
+
+            if(expressionValidator(ops))
+                display.textContent = Subtraction (parseFloat(ops[0]),parseFloat(ops[1]));
+            else{
+                display.textContent = "Invalid Expression";
+                isInvalid = true;
+                return;
+            }
+            ops = [];
+        }
+
+        else if( expression.includes("*"))
+        {
+            ops = expression.split("*");
+
+            if(expressionValidator(ops))
+                display.textContent = Multiplication (parseFloat(ops[0]),parseFloat(ops[1]));
+            else{
+                display.textContent = "Invalid Expression";
+                isInvalid = true;
+                return;
+            }
+            ops = [];
+        }
+
+        else if( expression.includes("/"))
+        {
+            ops = expression.split("/");
+
+            if(expressionValidator(ops))
+                display.textContent = Division (parseFloat(ops[0]),parseFloat(ops[1]));
+            else{
+                display.textContent = "Invalid Expression";
+                isInvalid = true;
+                return;
+            }
+            ops = [];
+        }
 }
