@@ -103,10 +103,16 @@
 
 @media (orientation: portrait)
 {
+    html{
+        background: rgb(48, 48, 48);
+    }
     .calculator{
         width:100%;
-        height:100%;
+        height:90%;
         justify-content: end;
+        align-self: flex-start;
+        border-radius: 0;
+        border:none;
     }
 
     .keypad{
@@ -115,5 +121,11 @@
 
     .display{
         font-size: 2.5rem;
+    }
+
+    .body
+    {
+        height: 90vh;
+        align-items: flex-start;
     }
 }
