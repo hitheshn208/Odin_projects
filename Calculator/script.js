@@ -9,7 +9,7 @@ const multiplybtn = document.getElementById('*');
 
 let ops;
 let expression = null;
-let isOperatorUsed = false, isInvalid = false;
+let isOperatorUsed = false, isInvalid = false, isEvaluated = false;
 display.textContent = null;
 
 /*--------------------------------------------------------------------------------------Keyboard-------------------------------------------------------------------------------*/
@@ -34,6 +34,12 @@ function mainControl(e)
     if(isInvalid)
     {
         isInvalid = false;
+        display.textContent = "";
+    }
+
+    if(isEvaluated)
+    {
+        isEvaluated = false;
         display.textContent = "";
     }
 
@@ -109,6 +115,7 @@ function mainControl(e)
                             return;
 
         case "Enter" : evaluation();
+                        isEvaluated = true;
                         break;
     }
 
@@ -196,7 +203,9 @@ function evaluation()
             ops = expression.split("+");
 
             if(expressionValidator(ops))
+            {
                 display.textContent = Addition (parseFloat(ops[0]),parseFloat(ops[1]));
+            }
             else{
                 display.textContent = "Invalid Expression";
                 isInvalid = true;
@@ -210,7 +219,9 @@ function evaluation()
             ops = expression.split("-");
 
             if(expressionValidator(ops))
+            {
                 display.textContent = Subtraction (parseFloat(ops[0]),parseFloat(ops[1]));
+            }
             else{
                 display.textContent = "Invalid Expression";
                 isInvalid = true;
@@ -224,7 +235,9 @@ function evaluation()
             ops = expression.split("*");
 
             if(expressionValidator(ops))
+            {
                 display.textContent = Multiplication (parseFloat(ops[0]),parseFloat(ops[1]));
+            }
             else{
                 display.textContent = "Invalid Expression";
                 isInvalid = true;
@@ -238,7 +251,9 @@ function evaluation()
             ops = expression.split("/");
 
             if(expressionValidator(ops))
+            { 
                 display.textContent = Division (parseFloat(ops[0]),parseFloat(ops[1]));
+            }
             else{
                 display.textContent = "Invalid Expression";
                 isInvalid = true;
