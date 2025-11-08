@@ -29,7 +29,14 @@ function bookCreator(id, title, author, category)
     this.category = category
 }
 
-
+document.addEventListener("keydown", (e)=>
+{
+    if(dialog.open && e.key === "Enter")
+    {
+        e.preventDefault();
+        addbtn.click();
+    }
+});
 
 addbtn.addEventListener("click", ()=>
 {
@@ -77,15 +84,6 @@ addbtn.addEventListener("click", ()=>
 
 btitle.addEventListener("input", ()=>{
     clicked = true;
-});
-
-document.addEventListener("keydown", (e)=>
-{
-    if((e.key == 'Enter') && clicked)
-    {
-        clicked = false;
-        addbtn.dispatchEvent(clickevent);
-    }
 });
 
 
