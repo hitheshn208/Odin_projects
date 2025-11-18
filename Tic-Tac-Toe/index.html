@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Spicy+Rice&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="infos">
+        <div>
+            <div id="PlayerOne"></div>
+            <div id="PlayerTwo"></div>
+        </div>
+        <button class="reset-btn"><img type = "svg" src="restart.svg">Reset</button>
+    </div>
+
+    <dialog class="dialog-box" id="dialog-box-1">
+        <label for="playerOneName" class="player-name-label">Player 1</label><br>
+        <input type="text" id="playerOneName" placeholder="Enter the player 1 name">
+        <div>
+        <input type="radio" name="choice" id="option1" value="X" checked>
+        <label for="option1" class="radio-btn">X</label>
+        <input type="radio" name="choice" id="option2" value="O" >
+        <label for="option2" class="radio-btn">O</label>
+        </div>
+        <br>
+        <div class="nxt-btn">
+            <button id="addPlayerOneBtn">Next</button>
+        </div>
+    </dialog>
+
+    <dialog class="dialog-box" id="dialog-box-2">
+        <label for="playerTwoName" class="player-name-label">Player 2</label><br>
+        <input type="text" id="playerTwoName" placeholder="Enter the player 2 name">
+        <div class="nxt-btn">
+            <button id="addPlayerTwoBtn">Next</button>
+        </div>
+    </dialog>
+
+    <div class="playground" disable>
+        <button id="cell-0" class = "cell"></button>
+        <button id="cell-1" class = "cell"></button>
+        <button id="cell-2" class = "cell"></button>
+        <button id="cell-3" class = "cell"></button>
+        <button id="cell-4" class = "cell"></button>
+        <button id="cell-5" class = "cell"></button>
+        <button id="cell-6" class = "cell"></button>
+        <button id="cell-7" class = "cell"></button>
+        <button id="cell-8" class = "cell"></button>
+    </div>
+
+    <div id="backdrop"></div>
+    <div id="winnerpop">
+        <div id="winnername"></div>
+        <p>Press anywhere to Play again</p>
+    </div>
+
+</body>
+</html>
