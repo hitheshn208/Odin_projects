@@ -8,7 +8,7 @@ const addPlayerOneBtn = document.querySelector('#addPlayerOneBtn');
 const addPlayerTwoBtn = document.querySelector('#addPlayerTwoBtn');
 const PlayerOneDisp = document.querySelector('#PlayerOne');
 const PlayerTwoDisp = document.querySelector('#PlayerTwo');
-const winnerPop = document.querySelector('#winnerpop');
+const winnerpop = document.querySelector('#winnerpop');
 const backdrop = document.querySelector('#backdrop');
 const winnername = document.querySelector('#winnername');
 
@@ -55,6 +55,10 @@ function Gameboard()
 {
     let gameBoard = ["","","","","","","","",""];
     let round = 0;
+    let colored_cell1;
+    let colored_cell2;
+    let colored_cell3;
+
 
     function updateDOM()
     {
@@ -107,7 +111,28 @@ function Gameboard()
         PlayerTwoDisp.textContent = PlayerTwoName +` (${PlayerTwoSymbol})`+ ` : ${PLAYER.getScoreofEachPlayer(2)}`;
     }
 
-    return { updateCell, updateDOM, resetDOM, isOccupied, isGameDraw, updateScore }
+    function fillcolorCells(a,b,c)
+    {
+        colored_cell1 = document.querySelector(`#cell-${a}`);
+        colored_cell2 = document.querySelector(`#cell-${b}`);
+        colored_cell3 = document.querySelector(`#cell-${c}`);
+
+        setTimeout(()=>{
+            colored_cell1.classList.add("colorfill-animation");
+            colored_cell2.classList.add("colorfill-animation");
+            colored_cell3.classList.add("colorfill-animation");
+        },300);
+    }
+
+
+    function removeColorCells()
+    {
+        colored_cell1.classList.remove("colorfill-animation");
+        colored_cell2.classList.remove("colorfill-animation");
+        colored_cell3.classList.remove("colorfill-animation");
+    }
+
+    return { updateCell, updateDOM, resetDOM, isOccupied, isGameDraw, updateScore, fillcolorCells, removeColorCells}
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -187,7 +212,7 @@ function GameControl()
         oMoves.length = 0;
     }
 
-    function isPLayerWinner()
+    function isPLayerWInner()
     {
         if(Playing.getSymbol() == 'X')
         {
@@ -196,7 +221,10 @@ function GameControl()
                 for(let i = 0; i<4; i++)
                 {
                     if(xMoves.includes(WINNER_CHANCES[i][0]) && xMoves.includes(WINNER_CHANCES[i][1]) && xMoves.includes(WINNER_CHANCES[i][2]))
+                    {
+                        GAME.fillcolorCells(WINNER_CHANCES[i][0],WINNER_CHANCES[i][1],WINNER_CHANCES[i][2])
                         return true;
+                    }
                 }
 
             }
@@ -204,7 +232,10 @@ function GameControl()
             for(let i =4; i<8; i++)
             {
                 if(xMoves.includes(WINNER_CHANCES[i][0]) && xMoves.includes(WINNER_CHANCES[i][1]) && xMoves.includes(WINNER_CHANCES[i][2]))
-                    return true;
+                {
+                        GAME.fillcolorCells(WINNER_CHANCES[i][0],WINNER_CHANCES[i][1],WINNER_CHANCES[i][2])
+                        return true;
+                }
             }
 
         }
@@ -215,7 +246,10 @@ function GameControl()
                 for(let i = 0; i<4; i++)
                 {
                     if(oMoves.includes(WINNER_CHANCES[i][0]) && oMoves.includes(WINNER_CHANCES[i][1]) && oMoves.includes(WINNER_CHANCES[i][2]))
+                    {
+                        GAME.fillcolorCells(WINNER_CHANCES[i][0],WINNER_CHANCES[i][1],WINNER_CHANCES[i][2])
                         return true;
+                    }
                 }
 
             }
@@ -223,7 +257,10 @@ function GameControl()
             for(let i =4; i<8; i++)
             {
                 if(oMoves.includes(WINNER_CHANCES[i][0]) && oMoves.includes(WINNER_CHANCES[i][1]) && oMoves.includes(WINNER_CHANCES[i][2]))
-                    return true;
+                {
+                        GAME.fillcolorCells(WINNER_CHANCES[i][0],WINNER_CHANCES[i][1],WINNER_CHANCES[i][2])
+                        return true;
+                }
             }
         }
     }
@@ -243,7 +280,7 @@ function GameControl()
         PlayerTwo.resetScore();
     }
 
-    return { switchturn, getcurrentPlayer, upDateMove, resetMove, isPLayerWinner, getScoreofEachPlayer, setScoreToZero};
+    return { switchturn, getcurrentPlayer, upDateMove, resetMove, isPLayerWInner, getScoreofEachPlayer, setScoreToZero};
 }
 /*-----------------------------------------------------------------------------*/
 
@@ -277,13 +314,13 @@ playground.addEventListener("click", (e)=>{
     PLAYER.upDateMove(index);
     GAME.updateDOM();
 
-    if(PLAYER.isPLayerWinner())
+    if(PLAYER.isPLayerWInner())
     {
         playground.style.cssText = "pointer-events : none";
         PLAYER.getcurrentPlayer().increaseScore();
         setTimeout(()=>{
             winnername.textContent = `${PLAYER.getcurrentPlayer().getName()} wins!`;
-            winnerPop.style.display = "flex";
+            winnerpop.style.display = "flex";
             backdrop.style.display = "block";
             
         },500);
@@ -296,7 +333,7 @@ playground.addEventListener("click", (e)=>{
 
         setTimeout(()=>{
             winnername.textContent = `It's a draw!`;
-            winnerPop.style.display = "flex";
+            winnerpop.style.display = "flex";
             backdrop.style.display = "block";
             GAME.resetDOM();
             PLAYER.resetMove();
@@ -322,9 +359,10 @@ document.addEventListener("click", ()=>{
         GAME.resetDOM();
         PLAYER.resetMove();
         GAME.updateScore();
+        GAME.removeColorCells();
         PLAYER.switchturn();
         winnername.textContent = "";
-        winnerPop.style.display = "none";
+        winnerpop.style.display = "none";
         backdrop.style.display = "none";
         
     }

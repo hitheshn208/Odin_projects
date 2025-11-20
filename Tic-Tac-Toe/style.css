@@ -323,3 +323,22 @@ h1{
         font-size: 1.5rem;
     }
 }
+
+.colorfill-animation
+{
+    animation: colorfill 0.5s ease-in-out;
+    background-color: rgb(3, 192, 255);
+    color: white;
+}
+
+@keyframes colorfill {
+ 
+    from{
+        background-color: white;
+    }
+
+    to{
+        color: white;
+        background-color: rgb(3, 192, 255);
+    }
+}
