@@ -1,0 +1,156 @@
+.menuMainHeading
+{
+    height:100px;
+    width:100%;
+    background-color: rgb(194, 0, 0);
+    display: flex;
+    align-items: end;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image
+{
+    height: 75%;
+    width:auto;
+    padding-left: 1rem;
+}
+
+.narutoEating
+{
+    height: 100%;
+    mask-image: linear-gradient(to bottom, black 90%, transparent);
+    filter: drop-shadow(0 6px 7px rgba(0,0,0,0.3));
+}
+
+.menu-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    cursor: default;
+}
+
+.menu-main-heading {
+    text-align: start;
+    font-size: 52px;
+    font-family: 'NINJA SHUSHI', 'cursive'; /* your ninja heading font */
+    margin-bottom: 40px;
+    margin-top: 0px;
+    display: flex;
+    position:relative;
+    border-bottom: solid 5px black;
+    border-bottom-style:double ;
+    cursor: pointer;
+}
+
+.menu_bowl
+{
+    position:absolute;
+    right:5px;
+    bottom:4px;
+    height: 70px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.147));
+    transition: transform 0.2s ease;
+}
+
+.menu-main-heading:hover .menu_bowl{
+    animation: hoverShake 0.6s ease;
+  transform: translateY(-6px); /* lift up */
+}
+
+.menu-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    border: 3px solid #b31313;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: url("./washi-texture-menu.jpg");
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.menu-col
+{
+    width:500px;
+    
+}
+/* Category Title */
+.menu-category {
+    font-family: "Shippori Antique B1", serif;
+    font-size: 38px;
+    margin-bottom: 5px;
+    padding-left: 0.5rem;
+}
+
+/* Small Subtitle */
+.menu-sub {
+    color: #b88a02;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 0.5rem;
+}
+
+/* Divider Line */
+.menu-line {
+    width: 100%;
+    height: 2px;
+    background: #d8d8d8;
+    margin-bottom: 25px;
+}
+
+/* Individual Item */
+.menu-item {
+    margin-bottom: 5px;
+    padding:0.5rem;
+    box-sizing: border-box;
+}
+
+.menu-item-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.menu-item-desc {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 3px;
+}
+
+.menu-price {
+    font-size: 17px;
+    color: #b31313;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .menu-columns {
+        flex-direction: column;
+    }
+}
+
+/* .background-image
+{
+    background:  url("The_Big_Wave.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap');
+
+.menu-item:hover {
+    transform: translateX(5px);
+    transition: 0.2s;
+}
+
+@keyframes hoverShake {
+  0%   { transform: translateY(-6px) translateX(0); }
+  20%  { transform: translateY(-6px) translateX(-4px); }
+  40%  { transform: translateY(-6px) translateX(4px); }
+  60%  { transform: translateY(-6px) translateX(-4px); }
+  80%  { transform: translateY(-6px) translateX(4px); }
+  100% { transform: translateY(-6px) translateX(0); }
+}
