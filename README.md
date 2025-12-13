@@ -64,3 +64,21 @@ Each folder contains a **dedicated README.md** with full project details.
 1. Clone the repository:
    ```bash
    git clone https://github.com/hitheshn208/Odin_projects.git
+2. Navigate to any project folder
+3. Open index.html in your browser <br>
+  <i>(or follow instructions in that project’s README)</i>
+
+---
+
+## 📈 Progress
+
+- Foundations projects completed
+- Advancing through JavaScript concepts
+- More projects coming soon
+
+---
+  
+## 🙌 Acknowledgements
+
+- The Odin Project – for the excellent open-source curriculum
+- Community mentors and contributors 💙
