@@ -66,12 +66,3 @@ It allows users to interact using either the **mouse** or **keyboard**, providin
 - Responsive UI design using CSS Grid and media queries
 
 ---
-
-##Project Structure
-
-Calculator/
-│
-├── index.html      # Calculator layout
-├── styles.css      # Styling and responsiveness
-└── script.js       # Core logic and event handling
-
