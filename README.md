@@ -42,6 +42,7 @@ This repo represents my **hands-on learning journey** in web development.
 | **Restaurant Page** | Modular restaurant website built using JavaScript and bundlers |
 | **Rock Paper Scissors** | Classic game built to practice JavaScript fundamentals |
 | **Tic-Tac-Toe** | Two-player game with win detection and UI feedback |
+| **Weather Application** | Weather app with current conditions, hourly and daily forecasts, and location search with map integration |
 
 Each folder contains a **dedicated README.md** with full project details.
 
