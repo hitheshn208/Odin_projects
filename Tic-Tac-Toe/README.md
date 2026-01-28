@@ -4,7 +4,7 @@ A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript.
 
 ## Live Demo
 
-🔗 [Click here to play the game](#) *(Add your live demo link here)*
+🔗 [Click here to play the game](https://tic-tac-toe-lilac-xi-33.vercel.app/)
 
 ## Features
 
