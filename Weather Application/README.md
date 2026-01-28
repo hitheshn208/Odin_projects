@@ -13,6 +13,15 @@ A modern, responsive weather application built with vanilla JavaScript, Webpack,
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Modern UI**: Glassmorphism design with smooth animations
 
+## Usage
+
+1. **Search for a Location**: Type a city name in the search bar and press Enter or click the search button
+2. **View Current Weather**: See real-time weather conditions including temperature, conditions, and more
+3. **Toggle Temperature Units**: Use the toggle switch to convert between Celsius and Fahrenheit
+4. **Explore Hourly Forecast**: Click on hourly cards to see detailed information for specific times
+5. **Check Future Forecast**: Click on daily forecast cards to view predictions for upcoming days
+6. **View Location on Map**: See the searched location marked on an interactive map
+
 ## Technologies Used
 
 - **JavaScript (ES6+)**: Core application logic
@@ -42,32 +51,6 @@ npm run dev
 
 4. Open your browser and navigate to the local development server (usually `http://localhost:8080`)
 
-## Usage
-
-1. **Search for a Location**: Type a city name in the search bar and press Enter or click the search button
-2. **View Current Weather**: See real-time weather conditions including temperature, conditions, and more
-3. **Toggle Temperature Units**: Use the toggle switch to convert between Celsius and Fahrenheit
-4. **Explore Hourly Forecast**: Click on hourly cards to see detailed information for specific times
-5. **Check Future Forecast**: Click on daily forecast cards to view predictions for upcoming days
-6. **View Location on Map**: See the searched location marked on an interactive map
-
-## Key Components
-
-### Main Features
-- **Search Functionality**: Real-time location search with error handling
-- **Current Weather Display**: Shows temperature, weather condition, and icon
-- **Hourly Forecast Cards**: Interactive cards showing weather by hour
-- **Additional Information**: Displays humidity, wind speed, precipitation, and UV index
-- **7-Day Forecast**: Shows weather predictions for the upcoming week
-- **Interactive Map**: Leaflet.js map with location markers
-
-### UI/UX Elements
-- Glassmorphism design for a modern look
-- Smooth animations and transitions
-- Loading indicators for API calls
-- Responsive grid layout
-- Touch-friendly mobile interface
-
 ## Development
 
 ### Available Scripts
@@ -81,13 +64,6 @@ The project uses Webpack with the following loaders:
 - **css-loader & style-loader**: For CSS processing
 - **html-loader**: For HTML template handling
 - **Asset modules**: For image and icon processing
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
 
 ## Acknowledgments
 
