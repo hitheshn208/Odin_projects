@@ -4,7 +4,7 @@ A Naruto-themed restaurant website built with HTML, CSS, and JavaScript, bundled
 
 ## Live Demo
 
-🔗 [Visit the restaurant](#) *(Add your live demo link here)*
+🔗 [Visit the restaurant](https://restraunt-page-p28ywqnxe-hithesh-s-projects-b3227f1a.vercel.app/)
 
 ## Features
 
