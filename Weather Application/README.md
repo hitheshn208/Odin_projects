@@ -42,33 +42,6 @@ npm run dev
 
 4. Open your browser and navigate to the local development server (usually `http://localhost:8080`)
 
-## Project Structure
-
-```
-Weather Application/
-├── src/
-│   ├── index.js                    # Main entry point
-│   ├── template.html               # HTML template
-│   ├── style.css                   # Base styles
-│   ├── search.css                  # Search component styles
-│   ├── currentWeather.css          # Current weather display styles
-│   ├���─ hourForecast.css            # Hourly forecast styles
-│   ├── moreInformation.css         # Additional info styles
-│   ├── futureDaysForecast.css      # Future forecast styles
-│   ├── mapLocationStyle.css        # Map component styles
-│   ├── loading.css                 # Loading animation styles
-│   ├── weatherFetch.js             # API calls
-│   ├── currentWeather.js           # Current weather component
-│   ├── temperatureToggle.js        # Temperature conversion
-│   ├── hourlyForecast.js           # Hourly forecast component
-│   ├── moreInfo.js                 # Additional info component
-│   ├── futureforeCast.js           # Future forecast component
-│   └── mapLocation.js              # Map integration
-├── webpack.config.js               # Webpack configuration
-├── package.json                    # Project dependencies
-└── .gitignore                      # Git ignore rules
-```
-
 ## Usage
 
 1. **Search for a Location**: Type a city name in the search bar and press Enter or click the search button
@@ -115,20 +88,6 @@ The project uses Webpack with the following loaders:
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-
-## Future Enhancements
-
-- [ ] Add weather alerts and warnings
-- [ ] Implement geolocation for automatic location detection
-- [ ] Add weather radar overlay on map
-- [ ] Include air quality index
-- [ ] Add weather comparison between multiple cities
-- [ ] Implement dark/light theme toggle
-- [ ] Add weather history charts
-
-## License
-
-This project is part of The Odin Project curriculum.
 
 ## Acknowledgments
 
