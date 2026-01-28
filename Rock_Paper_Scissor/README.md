@@ -4,7 +4,7 @@ A simple Rock Paper Scissors game built with HTML, CSS, and JavaScript.
 
 ## Live Demo
 
-🔗 [Play the game](#) *(Add your live demo link here)*
+🔗 [Play the game](https://rock-paper-scissor-lyart-delta.vercel.app/)
 
 ## Features
 
