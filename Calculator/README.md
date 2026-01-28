@@ -14,7 +14,7 @@ It allows users to interact using either the **mouse** or **keyboard**, providin
 
 ## 🌐 Live Demo
 
-[https://hitheshn208.github.io/Odin_projects/Calculator](https://simple-calculator-fawn-six.vercel.app/)
+[Calculate Now](https://simple-calculator-fawn-six.vercel.app/)
 
 ---
 
