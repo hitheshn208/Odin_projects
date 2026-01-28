@@ -4,7 +4,7 @@ A simple library management app to keep track of your books.
 
 ## Live Demo
 
-🔗 [View the app](#) *(Add your live demo link here)*
+🔗 [View the app](https://library-book-management-liard.vercel.app/)
 
 ## Features
 
