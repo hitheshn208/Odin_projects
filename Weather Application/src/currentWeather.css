@@ -1,0 +1,107 @@
+.currentWeather{
+    display: flex;
+    padding: 0.25rem;
+    justify-content: space-around;
+}
+
+.currentWeather div{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    justify-content: space-around;
+}
+
+.currentWeather div h2{
+    font-size: 2.7rem;
+    margin:0;
+}
+
+.currentWeather div h1{
+    font-size: 3rem;
+    padding:0;
+    margin: 0;
+    letter-spacing: 1.5px;
+}
+
+.currentWeather div .temperatureClass p{
+    margin:0;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.currentWeather .image{
+    display: flex;
+    flex-direction: column;
+}
+
+.currentWeather img{
+    width:100%;
+    height:70%;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35))
+}
+
+.caption{
+    text-align: center;
+    font-weight: 700;
+    margin:0;
+    /* margin-top: 10px; */
+    justify-self: flex-end;
+    color:rgba(255, 255, 255, 0.719);
+}
+
+@media (max-width: 768px) {
+    .currentWeather {
+        padding: 1rem;
+    }
+
+    .currentWeather div h2 {
+        font-size: 1.8rem;
+    }
+
+    .currentWeather div h1 {
+        font-size: 2.2rem;
+    }
+
+    .currentWeather div .temperatureClass p {
+        font-size: 0.75rem;
+    }
+
+    .currentWeather img {
+        width: 80%;
+        height: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .currentWeather {
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.75rem;
+        justify-content: space-between;
+    }
+
+    .currentWeather div h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .currentWeather div h1 {
+        font-size: 1.8rem;
+    }
+
+    .currentWeather div .temperatureClass p {
+        font-size: 0.7rem;
+    }
+
+    .currentWeather .image {
+        width:50%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .currentWeather img {
+        width: 50%;
+        height: auto;
+    }
+}

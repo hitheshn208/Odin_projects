@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="parent glass">
+        
+        <div class="search glass">
+            <input type="text" id="cityinput" placeholder="Search for the location">
+            <button id="searchButton"><img src="./searchIcon.png" alt="search Icon"></button>
+        </div>
+
+        <div class="tempToggle glass">
+            <input type="checkbox" id="Toggle">
+            <label for="Toggle">
+                <span id="CelciusSpan">Fahrenheit</span>
+                <span id="FaranheitSpan">Celsius</span>
+            </label>
+        </div>
+
+        <div class="currentWeather glass glass-dark" id="currentWeather"></div>
+
+        <div class="hourlyContainer glass"></div>
+
+        <div class="moreInfo glass">
+            <div>
+                <span>
+                <img src="humidity.svg" alt="">
+                Humidity
+                </span>
+                <h1  id="humidity"></h1>
+            </div>
+            <div >
+                <span>
+                <img src="windSpeed.svg" alt="">
+                Wind Speed
+                </span>
+                <h1 id="windSpeed"></h1>
+            </div>
+            <div>
+                <span>
+                <img src="precipitation.svg" alt="">
+                Chance of rain
+                </span>
+                <h1 id="precipitation"></h1>
+            </div>
+            <div >
+                <span>
+                <img src="UVIndex.svg" alt="">
+                UV Index
+                </span>
+                <h1 id="UVIndex"></h1>
+            </div>
+        </div>
+
+        <div class="div7 futureForecast glass">
+        </div>
+
+        <div class="div8 glass" id="map"></div>
+</div>
+    <div class="loader-overlay">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div></div>
+    </div>
+</body>
+</html>

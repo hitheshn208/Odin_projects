@@ -1,0 +1,148 @@
+.search{
+    position: relative;
+    overflow: hidden; 
+}
+
+.search input{
+    background-color: transparent;
+    outline-style: none;
+    border: none;
+    color:white;
+    font-size: medium;
+    width:100%;
+}
+
+.search input::placeholder{
+    color:rgba(255, 255, 255, 0.699);
+}
+
+.search button{
+    position: absolute;
+    right:0;
+    top:0;
+    height: 100%;
+    width:80px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    background: #1e3b726d;
+    cursor: pointer;
+    /* height:100%; */
+}
+
+.search button img{
+    width:60%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.tempToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tempToggle label {
+  position: relative;
+  display: flex;
+  width: 220px;
+  padding: 1px;
+  background: rgba(38, 66, 119, 0.9);
+  border-radius: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tempToggle label::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: rgba(80, 140, 255, 0.85);
+  border-radius: 12px;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  z-index: 0;
+}
+
+.tempToggle input:checked + label::before {
+  transform: translateX(100%);
+}
+
+.tempToggle label span {
+  width: 50%;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.tempToggle input:not(:checked) + label #CelciusSpan {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tempToggle input:checked + label #FaranheitSpan {
+  color: #fff;
+  font-weight: 600;
+}
+
+.search button:active{
+     background-color: #264277;
+}
+
+@media (max-width: 768px) {
+    .search input {
+        font-size: 0.9rem;
+    }
+
+    .search button {
+        width: 70px;
+    }
+
+    .tempToggle label {
+        width: 180px;
+    }
+
+    .tempToggle label span {
+        font-size: 13px;
+        padding: 7px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .search input {
+        font-size: 0.85rem;
+    }
+
+    .search button {
+        width: 60px;
+    }
+
+    .search button img {
+        width: 50%;
+    }
+
+    .tempToggle{
+        max-height: 40px;
+        box-sizing: border-box;
+        padding-block: 5px;
+    }
+
+    .tempToggle label {
+        width: 160px;
+        height: 30px;
+    }
+
+    .tempToggle label span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px
+    }
+}

@@ -1,0 +1,139 @@
+.hourlyContainer{
+    display: flex;
+    overflow: hidden;
+    padding-top:0.5rem;
+    align-items: center;
+    overflow-x: scroll;
+      scrollbar-width: none;
+      position: relative;
+    
+      /* transition: 0.2s; */
+    /* height: 100%; */
+}
+
+#hourlyCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    height: 80%;
+    min-width : 120px;
+    padding-block: 12px;
+    margin-inline: 7px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#hourlyCard h3{
+    margin: 0;
+    font-size: 0.9rem;
+    color:rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+#hourlyCard img{
+    width:60%;
+    box-sizing: border-box;
+    pointer-events: none;
+    padding: 10px;
+}
+
+#hourlyCard h2{
+    color:rgb(255, 255, 255);
+    margin:0;
+    pointer-events: none;
+    font-size: 1.1rem;
+}
+
+.Whiteline{
+    height: 70%;
+    border:rgba(255, 255, 255, 0.123) 1px solid
+}
+
+#hourlyCard:hover{
+    background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+}
+
+#hourlyCard:active{
+    background: rgba(255, 255, 255, 0.22);
+  transform: translateY(0);
+  box-shadow: 
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.hourlyCardSelected{
+    background: rgba(170, 210, 255, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(170, 210, 255, 0.5);
+}
+
+.hourlyHeading{
+    margin: 0;
+    width:100%;
+    text-align:left;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: smaller;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top:0;
+    font-weight: 700;
+    color: rgba(255, 253, 253, 0.815);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    #hourlyCard {
+        min-width: 100px;
+        padding-block: 10px;
+        margin-inline: 5px;
+    }
+
+    #hourlyCard h3 {
+        font-size: 0.75rem;
+    }
+
+    #hourlyCard h2 {
+        font-size: 0.95rem;
+    }
+
+    #hourlyCard img {
+        width: 55%;
+    }
+
+    .hourlyHeading {
+        font-size: 0.75rem;
+        padding-left: 8px;
+        padding-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hourlyCard {
+        min-width: 85px;
+        padding-block: 8px;
+        margin-inline: 4px;
+    }
+
+    #hourlyCard h3 {
+        font-size: 0.7rem;
+    }
+
+    #hourlyCard h2 {
+        font-size: 0.85rem;
+    }
+
+    #hourlyCard img {
+        width: 50%;
+        padding: 6px;
+    }
+
+    .hourlyHeading {
+        font-size: 0.7rem;
+    }
+}

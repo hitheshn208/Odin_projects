@@ -1,0 +1,234 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(
+    135deg,
+    #1e3c72,
+    #2a5298
+  );
+  font-family: 'Inter', sans-serif;
+}
+
+.parent {
+    width:75%;
+    height:95%;
+    display: grid;
+    grid-template-columns: 50px repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 8px;
+    padding:10px;
+}
+    
+.search{
+    grid-column: span 6 / span 6;
+    display: flex;
+    padding:0.7rem;
+}
+
+.currentWeather {
+    grid-column: span 5 / span 5;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.hourlyContainer {
+    grid-column: span 5 / span 5;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 5;
+    /* min-height: 200px; */
+}
+
+.moreInfo {
+    grid-column: span 5 / span 5;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 8;
+}
+
+.div7 {
+    grid-column: span 4 / span 4;
+    grid-row: span 5 / span 5;
+    grid-column-start: 6;
+    grid-row-start: 2;
+}
+
+.div8{
+    grid-row-start: 8;
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 6;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 20px;
+
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-dark {
+  background: rgba(20, 40, 80, 0.35);
+  backdrop-filter: blur(22px);
+}
+
+.tempToggle{
+    grid-column: span 3 / span 3;
+    grid-column-start:7;
+    grid-row-start: 1;
+}
+
+/* Tablet Layout */
+@media (max-width: 1024px) {
+    .parent {
+        width: 90%;
+        height: auto;
+        min-height: 95vh;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .search {
+        grid-column: span 4 / span 4;
+        grid-row: 1;
+    }
+
+    .tempToggle {
+        grid-column: span 2 / span 2;
+        grid-column-start: 5;
+        grid-row: 1;
+    }
+
+    .currentWeather {
+        grid-column: span 6 / span 6;
+        grid-row: 2;
+        grid-column-start: 1;
+    }
+
+    .hourlyContainer {
+        grid-column: span 6 / span 6;
+        grid-row: 3;
+        grid-column-start: 1;
+    }
+
+    .moreInfo {
+        grid-column: span 6 / span 6;
+        grid-row: 4;
+        grid-column-start: 1;
+    }
+
+    .div7 {
+        grid-column: span 6 / span 6;
+        grid-row: 5;
+        grid-column-start: 1;
+    }
+
+    .div8 {
+        grid-column: span 6 / span 6;
+        grid-row: 6;
+        grid-column-start: 1;
+        min-height: 300px;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .parent {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .search {
+        order: 1;
+        padding: 0.6rem;
+    }
+
+    .tempToggle {
+        order: 2;
+    }
+
+    .currentWeather {
+        order: 3;
+        min-height: 180px;
+    }
+
+    .hourlyContainer {
+        order: 4;
+        min-height: 150px;
+    }
+
+    .moreInfo {
+        order: 5;
+    }
+
+    .div7 {
+        order: 6;
+        min-height: 250px;
+    }
+
+    .div8 {
+        order: 7;
+        min-height: 300px;
+    }
+}
+
+/* Small Mobile Layout */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .parent {
+        gap: 10px;
+        padding: 6px;
+    }
+
+    .search {
+        padding: 0.5rem;
+    }
+
+    .currentWeather {
+        min-height: 160px;
+    }
+
+    .hourlyContainer {
+        min-height: 140px;
+    }
+
+    .div7 {
+        min-height: 220px;
+    }
+
+    .div8 {
+        min-height: 250px;
+    }
+}
