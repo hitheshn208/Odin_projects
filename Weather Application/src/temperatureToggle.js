@@ -38,7 +38,6 @@ function formatNumber(num)
 export function getWeatherImage(data,hour,day)
 {
     let icon = data.days[day].hours[hour].icon;
-    console.log(icon);
 
     switch(icon)
     {

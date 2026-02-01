@@ -86,7 +86,6 @@ hourlyContainer.addEventListener("click", (e)=>{
     hourlyCardelement  = e.target;
     let day = Number(hourlyCardelement.dataset.day);
     let hour = Number(hourlyCardelement.dataset.hour);
-    console.log(day,hour);
 
     loadCurrentWeatherDOM(data,hour,day);
     fillMoreInfo(data,hour,day);
@@ -103,7 +102,6 @@ futureForecast.addEventListener("click", (e)=>{
         dayRowelement.classList.remove("dayCardSelected");
 
     dayRowelement = e.target;
-    console.log(dayRowelement);
 
     let dayno = Number(dayRowelement.dataset.dayno);
     const currentHour =  new Date().getHours();

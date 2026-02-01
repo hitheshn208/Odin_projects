@@ -6,7 +6,6 @@ hourlyContainer.addEventListener("wheel", (e)=>{
     // e.preventDefault();
 
     hourlyContainer.scrollLeft += e.deltaY*0.35;
-    console.log(e.deltaY);
 })
 
 
